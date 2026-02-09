@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maths Solver AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <main class="app-shell">
+    <header class="top-bar">
+      <h1>Maths Solver AI</h1>
+      <div class="controls">
+        <button id="themeToggle" class="chip" type="button">🌗 Theme</button>
+        <select id="languageSelect" class="chip" aria-label="Choose language">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
+    </header>
+
+    <section class="composer">
+      <textarea id="problemInput" placeholder="Type your maths problem here... Example: 2x + 5 = 19" rows="3"></textarea>
+      <div class="composer-actions">
+        <label class="toggle">
+          <input id="detailedMode" type="checkbox" checked />
+          <span>Detailed steps</span>
+        </label>
+        <div class="right-actions">
+          <button id="voiceBtn" class="chip" type="button">🎤 Voice</button>
+          <button id="solveBtn" class="primary" type="button">Solve</button>
+        </div>
+      </div>
+      <div class="suggestions">
+        <button class="suggestion" data-problem="2x + 5 = 19">Linear equation</button>
+        <button class="suggestion" data-problem="x^2 - 5x + 6 = 0">Quadratic equation</button>
+        <button class="suggestion" data-problem="15% of 240">Percentage</button>
+        <button class="suggestion" data-problem="(8 + 12) * 3 - 7">Expression</button>
+      </div>
+    </section>
+
+    <section class="response-card" id="responseCard" aria-live="polite">
+      <h2 id="responseTitle">Your solution will appear here</h2>
+      <ol id="stepsList"></ol>
+      <div class="answer" id="finalAnswer"></div>
+      <div class="response-actions hidden" id="responseActions">
+        <button id="copyBtn" class="chip" type="button">Copy</button>
+        <button id="downloadBtn" class="chip" type="button">Download</button>
+      </div>
+    </section>
+
+    <section class="history-card">
+      <div class="history-header">
+        <h3>Recent problems</h3>
+        <button id="clearHistoryBtn" class="chip danger" type="button">Clear</button>
+      </div>
+      <ul id="historyList"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
